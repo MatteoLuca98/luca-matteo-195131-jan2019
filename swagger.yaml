@@ -1,0 +1,175 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: "esame"
+host: matteo-luca-195131-jan2019.herokuapp.com
+basePath: "/room"
+tags: 
+- name: "User"
+- name: "Message"
+- name: "Room"
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+
+paths:
+  /user:
+    x-summary: /user
+    get:
+      tags: 
+        - "User"
+      summary: List of users
+      produces:
+      - "application/json"
+      parameters:
+      - in: "query"
+        name: "idUser"
+        type: "integer"
+      - in: "query"
+        name: "nameUser"
+        type: "string"
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/User"
+        401: 
+          description: "invalid"
+    
+    post:
+      tags: 
+        - "User"
+      summary: Create user
+      produces: 
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Message object"
+        required: true
+        schema:
+          $ref: "#/definitions/User" 
+      responses:
+        201:
+          description: 'succesful'
+        400:
+          description: "Invalid input"
+    
+
+
+  /room:
+    x-summary: /room
+    get:
+      tags: 
+        - "Room"
+      summary: List of rooms
+      produces:
+      - "application/json"
+      parameters:
+      - in: "query"
+        name: "idRoom"
+        type: "integer"
+      - in: "query"
+        name: "nameRoom"
+        type: "string"
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Room"
+        401: 
+          description: "invalid"
+    post:
+      tags: 
+        - "Room"
+      summary: Create rooom
+      produces: 
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Message object"
+        required: true
+        schema:
+          $ref: "#/definitions/Room" 
+      responses:
+        201:
+          description: 'succesful'
+        400:
+          description: "Invalid input"
+
+  /Message:
+    x-summary: room/messages
+    post:
+      tags: 
+        - "Message"
+      summary: Create message
+      produces: 
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Message object"
+        required: true
+        schema:
+          $ref: "#/definitions/Message" 
+      responses:
+        201:
+          description: 'succesful'
+        400:
+          description: "Invalid input"
+
+
+
+
+definitions:
+  User: 
+    type: "object"
+    properties:
+      idUser:
+        type: "integer"
+      nameUser: 
+        type: "string"
+    required: 
+      - idUser
+    example:
+      idRoom: 9847342
+      nameUser: "maicol"
+
+  Room: 
+    type: "object"
+    properties:
+      idRoom:
+        type: "integer"
+      nameRoom: 
+        type: "integer"
+    required: 
+      - idRoom
+    example:
+      idRoom: 84724
+      nameRoom: "sports"
+
+  Message:
+    type: "object"
+    properties:
+      idUser:
+        type: "integer"
+      idRoom:
+        type: "integer"
+      textMessage:
+        type: "string"
+    required:
+      - idUser
+      - idRoom
+      - textMessage
+    example:
+      idStudent: 753847
+      idRoom: 29342
+      textMessage: "lorem issue dfnwjeklajks"
