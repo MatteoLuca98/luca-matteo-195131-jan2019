@@ -10,3 +10,6 @@ routesV1.use('/rooms', roomsRoutes);
 
 var messagesRoutes = require('./messagesRoute');
 routesV1.use('/rooms/messages', messagesRoutes);
+
+var userRoutes = require('./userRoute');
+routesV1.use('/user', userRoutes);

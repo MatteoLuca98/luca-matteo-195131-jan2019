@@ -137,10 +137,12 @@ definitions:
         type: "integer"
       nameUser: 
         type: "string"
+      password:
+        type: "string"
     required: 
       - idUser
     example:
-      idRoom: 9847342
+      idUser: 238123
       nameUser: "maicol"
 
   Room: 
@@ -165,11 +167,14 @@ definitions:
         type: "integer"
       textMessage:
         type: "string"
+      date:
+          type: "sring"
+          format: "date-time"
     required:
       - idUser
       - idRoom
       - textMessage
     example:
-      idStudent: 753847
+      idUser: 753847
       idRoom: 29342
       textMessage: "lorem issue dfnwjeklajks"

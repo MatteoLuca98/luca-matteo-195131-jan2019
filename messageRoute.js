@@ -1,5 +1,5 @@
 const express = require('express');
-const Student   = require('../rooms/message');
+const Message = require('../rooms/message');
 
 const messageRoutes = express.Router(); 
 
@@ -8,7 +8,7 @@ messageRoutes.route('/')
 //get all messages
 .get(async function(req, res) {
     var message = new Message();
-    students = await message.find(req.query)
+    message = await message.find(req.query)
     if(message == undefined)
         res.status(400).send('Error, something went wrong')
 
@@ -25,7 +25,7 @@ messageRoutes.route('/')
     if(message.text === null){
         res.status(400).send('Error 400: test is null')
     }else{
-        Student.addMessage(message)
+        Message.addMessage(message)
         res.status(201).send('Success: message inserted')
     }
 })
@@ -39,6 +39,4 @@ messageRoutes.route('/')
     res.status(400).send("Error 400: no parameters given")
 })
 
-messageRoutes.route('/:id')
-
-module.exports = studentsRoutes;
+module.exports = messageRoutes;

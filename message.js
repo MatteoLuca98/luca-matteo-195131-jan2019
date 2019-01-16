@@ -15,12 +15,10 @@ class Message{
         if(criterias.id===undefined){
 
             criterias.id = uniqid();
-
         }  
 
       messageTable.push(criterias);
 
     }
-
 }
 module.exports = Message;
