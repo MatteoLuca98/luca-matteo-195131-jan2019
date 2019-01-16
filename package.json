@@ -1,0 +1,33 @@
+{
+  "name": "luca-matteo-195131-jan2019",
+  "version": "1.0.0",
+  "description": "Exam",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatteoLuca98/luca-matteo-195131-jan2019.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatteoLuca98/luca-matteo-195131-jan2019/issues"
+  },
+  "homepage": "https://github.com/MatteoLuca98/luca-matteo-195131-jan2019#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "jquery": "^3.3.1",
+    "supertest": "^3.4.1"
+  }, 
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true
+ }
+}
