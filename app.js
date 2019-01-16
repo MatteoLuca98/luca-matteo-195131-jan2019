@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.get('/', express.static('public'));
 
 //routes V1
-var routesV1 = require('./app/routes/apisV1');
+var routesV1 = require('./apisV1');
 app.use('/v1', routesV1);
 
 
