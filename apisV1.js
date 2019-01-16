@@ -5,11 +5,11 @@ routesV1.get('/', function(req, res) {
 	res.json({ message: 'ROUTESV1 WORKS !' });
 })
 
-var roomsRoutes = require('./roomsRoutes');
-routesV1.use('/rooms', roomsRoutes);
+var roomRoutes = require('./roomRoutes');
+routesV1.use('/rooms', roomRoutes);
 
-var messagesRoutes = require('./messagesRoute');
-routesV1.use('/rooms/messages', messagesRoutes);
+var messageRoutes = require('./messageRoute');
+routesV1.use('/rooms/messages', messageRoutes);
 
-var userRoutes = require('./userRoute');
+var userRoutes = require('./userRoutes');
 routesV1.use('/user', userRoutes);

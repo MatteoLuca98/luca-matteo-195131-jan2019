@@ -1,5 +1,5 @@
 const express = require('express');
-const Message = require('../rooms/message');
+const Message = require('./message');
 
 const messageRoutes = express.Router(); 
 

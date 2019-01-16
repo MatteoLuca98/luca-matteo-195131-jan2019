@@ -1,5 +1,5 @@
 const express = require('express');
-const Room = require('../rooms');
+const Room = require('./room');
 
 const roomRoutes = express.Router(); 
 
